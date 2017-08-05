@@ -24,7 +24,9 @@
 
 ### 昔作ったもの
 
-<iframe src="http://jsrun.it/GeckoTang/4rXg" frameborder="0" style="width: 470px; height: 500px;"></iframe>
+![](https://i.gyazo.com/6a113694fab1d723decf7cef975f9720.png)
+
+[CSS PANIC](http://jsdo.it/GeckoTang/4rXg)
 
 JSは使ってません...
 
