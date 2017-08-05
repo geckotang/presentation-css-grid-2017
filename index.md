@@ -630,17 +630,20 @@ JSは使ってません...
 - 基礎から最新トレンド技術まで読みたいときにすぐ読める
 - [Web](https://app.codegrid.net/)・[iOSアプリ](https://itunes.apple.com/jp/app/codegrid/id1122952912?mt=8) × メールマガジン
 - 月額800円<small style="vertical-align: middle;">（税抜）</small>で、全記事アクセス＋月4回配信
-- 無料記事、無料期間あります
+- 無料記事、無料購読期間あります
 - [CodeGrid - これからのグリッドレイアウト 全6回](https://app.codegrid.net/series/2016-display-grid)
 
 ---
 
-## 参考記事
+## 参考
 
 - [CodeGrid - これからのグリッドレイアウト -  Grid Layout Moduleの概要](https://app.codegrid.net/entry/display-grid-1)
 - [ICS MEDIA - これからのレイアウトはGrid Layoutで決まり？特徴で使い分けたいCSSレイアウト手法](https://ics.media/entry/15921)
 - [Rachel Andrew氏のブログ](https://rachelandrew.co.uk/archives/)
 - [A Step by Step Guide to the Auto-Placement Algorithm in CSS Grid](https://www.sitepoint.com/a-step-by-step-guide-to-the-auto-placement-algorithm-in-css-grid/)
+- [CSS Grid Ask Me Anything](https://github.com/rachelandrew/cssgrid-ama)
+- [The Experimental Layout Lab of Jen Simmons](http://labs.jensimmons.com/)
+- [GRID GARDEN](http://cssgridgarden.com/)
 
 ---
 
