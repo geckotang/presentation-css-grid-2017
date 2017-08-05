@@ -35,8 +35,8 @@ JSは使ってません...
 1. 現在までの様々なレイアウト方法
 2. CSS Gridとは
 3. CSS Gridではどんなレイアウトができる？
-4. CSS Gridを理解するための基礎知識
-5. 各ブラウザの実装状況
+4. 各ブラウザの実装状況
+5. CSS Gridを理解するための基礎知識
 6. CSS Gridの使い所や、Flexboxとの使い分け
 7. まとめ
 
@@ -195,160 +195,7 @@ JSは使ってません...
 
 ---
 
-## 4. CSS Gridを理解するための基礎知識
-
-- グリッドコンテナとグリッドアイテム
-- グリッドライン
-- グリッドトラック
-- グリッドセル
-- グリッドエリア
-
-<hr>
-
-用語が多い。覚えておくと理解を助ける。
-
-------
-
-### グリッドコンテナとグリッドアイテム
-
-![](img/slide-5-1.png)
-
-- グリッドコンテナ：親。大枠を決める。
-- グリッドアイテム：子。どの枠に入るかを決める。
-
-------
-
-### グリッドコンテナ
-
-- `display: grid;`または`display: inline-grid;`が指定された要素。グリッドの分割数や、分割されたグリッドの列や行の幅や高さといった、レイアウト情報を指定する。
-
-```html
-<div class="grid"></div>
-```
-
-```css
-.grid {
-  /* グリッドコンテナの指定 */
-  display: grid;
-  grid-template-columns: 100px 100px;
-  grid-template-rows: 100px 100px;
-}
-```
-
-------
-
-### グリッドアイテム
-
-- グリッドコンテナの直下の子要素をグリッドアイテムと呼ぶ。グリッドアイテムには、分割されたグリッドのどこに位置するかなどを指定する。
-
-```html
-<div class="grid"><!-- グリッドコンテナ -->
-  <div class="grid__item-1">item</div> <!-- グリッドアイテム -->
-  <div class="grid__item-2">item</div> <!-- グリッドアイテム -->
-  <div class="grid__item-3">item</div> <!-- グリッドアイテム -->
-  <div class="grid__item-4">item</div> <!-- グリッドアイテム -->
-</div>
-```
-
-```css
-/* グリッドコンテナの指定 */
-.grid {
-  display: grid;
-  grid-template-columns: 100px 100px;
-  grid-template-rows: 100px 100px;
-}
-/* グリッドアイテムの指定 */
-.grid__item-1 { grid-column: 1; grid-row: 1; }
-.grid__item-2 { grid-column: 2; grid-row: 1; }
-.grid__item-3 { grid-column: 1; grid-row: 2; }
-.grid__item-4 { grid-column: 2; grid-row: 2; }
-```
-
-------
-
-### グリッドライン
-
-![](img/slide-5-4.png)
-
-- グリッドラインは、グリッドを横方向・縦方向に分割する罫線のこと。
-- そのグリッドラインは太さがなく、見た目には現れない。
-
-------
-
-### 名前付きグリッドライン
-
-![](img/slide-5-5.png)
-
-- グリッドラインには制作者自身が名前を付けることもでき、各列や行のサイズ指定の前後に`[first]`のように記述する。
-
-```css
-.grid {
-  display: grid;
-  grid-template-columns: [first] 100px [second] 200px [last]; /* 2列 */
-  grid-template-rows: [first] 100px [second] auto [third] auto [last]; /* 3行 */
-}
-```
-
-------
-
-### グリッドトラック
-
-![](img/slide-5-6.png)
-
-- グリッドトラックは、各列や行を意味する。
-- グリッドトラックのサイズなどを指定するためには、`grid-template-columns`や`grid-template-rows`プロパティをグリッドコンテナに指定する。
-
-------
-
-### グリッドセル
-
-![](img/slide-5-7.png)
-
-- 行のグリッドトラックと列のグリッドトラックが交差する箇所を「グリッドセル」と呼ぶ。次のように指定した場合は、縦横100pxのグリッドセルが4つ作成される。
-
-```css
-.grid {
-  grid-template-columns: 100px 100px;
-  grid-template-rows: 100px 100px;
-}
-```
-
-------
-
-### グリッドエリア
-
-![](img/slide-5-8.png)
-
-- 複数の行と列のグリッドトラックが交差する範囲は「グリッドエリア」と呼ぶ。
-
-------
-
-### 例：グリッドエリアの指定（HTML）
-
-![](img/slide-5-9.png)
-
-3行2列に分割して、要素を配置したい
-
-------
-
-### 例：グリッドエリアの指定（CSS）
-
-![](img/slide-5-10.png)
-
-アスキーアートのように配置できる
-
-------
-
-### グリッドエリアと<br>名前付きグリッドライン
-
-![](img/slide-5-11.png)
-
-- グリッドエリアを作成すると、自動的にそれらの名前が付いたグリッドラインが作成される。
-- たとえば**グリッドエリアa**であれば、そのエリアの**始端辺はa-start**となり、**終端辺はa-end**というように**-start**と**-end**という接尾辞が付与されたグリッドラインが自動的に作成される。
-
----
-
-## 5. 各ブラウザの実装状況
+## 4. 各ブラウザの実装状況
 
 [Can I use...](http://caniuse.com/#feat=css-grid)
 
@@ -523,6 +370,159 @@ JSは使ってません...
 </tr>
 </tbody>
 </table>
+
+---
+
+## 5. CSS Gridを理解するための基礎知識
+
+- グリッドコンテナとグリッドアイテム
+- グリッドライン
+- グリッドトラック
+- グリッドセル
+- グリッドエリア
+
+<hr>
+
+用語が多い。覚えておくと理解を助ける。
+
+------
+
+### グリッドコンテナとグリッドアイテム
+
+![](img/slide-5-1.png)
+
+- グリッドコンテナ：親。大枠を決める。
+- グリッドアイテム：子。どの枠に入るかを決める。
+
+------
+
+### グリッドコンテナ
+
+- `display: grid;`または`display: inline-grid;`が指定された要素。グリッドの分割数や、分割されたグリッドの列や行の幅や高さといった、レイアウト情報を指定する。
+
+```html
+<div class="grid"></div>
+```
+
+```css
+.grid {
+  /* グリッドコンテナの指定 */
+  display: grid;
+  grid-template-columns: 100px 100px;
+  grid-template-rows: 100px 100px;
+}
+```
+
+------
+
+### グリッドアイテム
+
+- グリッドコンテナの直下の子要素をグリッドアイテムと呼ぶ。グリッドアイテムには、分割されたグリッドのどこに位置するかなどを指定する。
+
+```html
+<div class="grid"><!-- グリッドコンテナ -->
+  <div class="grid__item-1">item</div> <!-- グリッドアイテム -->
+  <div class="grid__item-2">item</div> <!-- グリッドアイテム -->
+  <div class="grid__item-3">item</div> <!-- グリッドアイテム -->
+  <div class="grid__item-4">item</div> <!-- グリッドアイテム -->
+</div>
+```
+
+```css
+/* グリッドコンテナの指定 */
+.grid {
+  display: grid;
+  grid-template-columns: 100px 100px;
+  grid-template-rows: 100px 100px;
+}
+/* グリッドアイテムの指定 */
+.grid__item-1 { grid-column: 1; grid-row: 1; }
+.grid__item-2 { grid-column: 2; grid-row: 1; }
+.grid__item-3 { grid-column: 1; grid-row: 2; }
+.grid__item-4 { grid-column: 2; grid-row: 2; }
+```
+
+------
+
+### グリッドライン
+
+![](img/slide-5-4.png)
+
+- グリッドラインは、グリッドを横方向・縦方向に分割する罫線のこと。
+- そのグリッドラインは太さがなく、見た目には現れない。
+
+------
+
+### 名前付きグリッドライン
+
+![](img/slide-5-5.png)
+
+- グリッドラインには制作者自身が名前を付けることもでき、各列や行のサイズ指定の前後に`[first]`のように記述する。
+
+```css
+.grid {
+  display: grid;
+  grid-template-columns: [first] 100px [second] 200px [last]; /* 2列 */
+  grid-template-rows: [first] 100px [second] auto [third] auto [last]; /* 3行 */
+}
+```
+
+------
+
+### グリッドトラック
+
+![](img/slide-5-6.png)
+
+- グリッドトラックは、各列や行を意味する。
+- グリッドトラックのサイズなどを指定するためには、`grid-template-columns`や`grid-template-rows`プロパティをグリッドコンテナに指定する。
+
+------
+
+### グリッドセル
+
+![](img/slide-5-7.png)
+
+- 行のグリッドトラックと列のグリッドトラックが交差する箇所を「グリッドセル」と呼ぶ。次のように指定した場合は、縦横100pxのグリッドセルが4つ作成される。
+
+```css
+.grid {
+  grid-template-columns: 100px 100px;
+  grid-template-rows: 100px 100px;
+}
+```
+
+------
+
+### グリッドエリア
+
+![](img/slide-5-8.png)
+
+- 複数の行と列のグリッドトラックが交差する範囲は「グリッドエリア」と呼ぶ。
+
+------
+
+### 例：グリッドエリアの指定（HTML）
+
+![](img/slide-5-9.png)
+
+3行2列に分割して、要素を配置したい
+
+------
+
+### 例：グリッドエリアの指定（CSS）
+
+![](img/slide-5-10.png)
+
+アスキーアートのように配置できる
+
+------
+
+### グリッドエリアと<br>名前付きグリッドライン
+
+![](img/slide-5-11.png)
+
+- グリッドエリアを作成すると、自動的にそれらの名前が付いたグリッドラインが作成される。
+- たとえば**グリッドエリアa**であれば、そのエリアの**始端辺はa-start**となり、**終端辺はa-end**というように**-start**と**-end**という接尾辞が付与されたグリッドラインが自動的に作成される。
 
 ---
 
